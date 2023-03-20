@@ -8,3 +8,7 @@
         flex-wrap: wrap;
     }
 }
+
+body {
+    font-family: 'Lato', sans-serif;
+}
