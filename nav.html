@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link href="nav.css" rel="stylesheet">
+    <title>NAV</title>
+</head>
+
+<body class="bg-red-800">
+    <nav
+        class="nav-backing w-[calc(100vw_-_2rem)] lg:w-[calc(100%_-_4rem)] top-2 md:top-[2rem] mx-auto left-1/2 backdrop-blur-sm  bg-white/20  z-[999] rounded-md">
+        <div class="mx-auto  px-4 sm:px-4 lg:px-4">
+            <div class="relative flex h-16 items-center justify-between">
+                <div class="flex flex-1 sm:items-stretch sm:justify-end w-full">
+                    <div class="flex flex-shrink-0 items-center mr-auto">
+                        <a href="#">
+                            <img class="block h-4 w-auto"
+                                src="https://www.goodwood.com/resources/assets/dist/img/logo.png" alt="Goodwood Logo"
+                                title="Back to Goodwood.com">
+                        </a>
+
+                    </div>
+                    <div class="hidden sm:ml-6 sm:block">
+                        <div class="flex space-x-1 mr-3">
+                            <!-- Current: "bgm-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+
+
+                            <a href="#"
+                                class="text-gray-300 hover:text-white px-3 py-2 pt-3 rounded-md text-sm font-normal uppercase tracking-widest">Celebrations</a>
+
+                            <a href="#"
+                                class="text-gray-300  hover:text-white px-3 py-2 pt-3 rounded-md text-sm font-normal uppercase tracking-widest">Explore
+                                Timeline</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="inset-y-0 flex items-center pr-2 sm:pr-0 ">
+                    <button type="button"
+                        class="relative inline-flex items-center  border border-transparent bg-gold px-4 py-2 pt-3 text-xs uppercase tracking-widest font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2  focus:bg-black  focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <!-- Heroicon name: mini/plus -->
+                        <span>Sign up</span>
+                    </button>
+
+                    <!--
+              Dropdown menu, show/hide based on menu state.
+  
+              Entering: "transition ease-out duration-100"
+                From: "transform opacity-0 scale-95"
+                To: "transform opacity-100 scale-100"
+              Leaving: "transition ease-in duration-75"
+                From: "transform opacity-100 scale-100"
+                To: "transform opacity-0 scale-95"
+            -->
+                </div>
+                <div class="inset-y-0 left-0 flex items-center sm:hidden">
+                    <!-- Mobile menu button-->
+                    <button type="button" id="mobile-burger"
+                        class="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+
+                        <!--
+                Icon when menu is closed.
+    
+                Heroicon name: outline/bars-3
+    
+                Menu open: "hidden", Menu closed: "block"
+              -->
+                        <svg class="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                        <!--
+                Icon when menu is open.
+    
+                Heroicon name: outline/x-mark
+    
+                Menu open: "block", Menu closed: "hidden"
+              -->
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="menu-mb_class" id="mobile-menu">
+            <div class="space-y-1 px-2 pt-2 pb-3">
+                <div class="flex flex-col">
+                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                        aria-current="page">Home</a>
+
+                    <a href="#"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Celebrations</a>
+
+                    <a href="#"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Timeline</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script>
+        var button = document.getElementById("mobile-burger"); // Assumes element with id='button'
+        const mobileMenu = document.getElementById("mobile-menu");
+        button.addEventListener("click", mobileToggler);
+
+        function mobileToggler() {
+            mobileMenu.classList.toggle("menu-mb_class");
+        }
+    </script>
+</body>
+
+</html>
